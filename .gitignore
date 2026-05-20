@@ -1,0 +1,31 @@
+# Dependencies
+vendor/
+ai_service/venv/
+node_modules/
+
+# Upload files (jangan push foto ke GitHub)
+uploads/produk/*
+uploads/bukti_bayar/*
+uploads/custom_referensi/*
+uploads/tryon/*
+!uploads/produk/.gitkeep
+!uploads/bukti_bayar/.gitkeep
+!uploads/custom_referensi/.gitkeep
+!uploads/tryon/.gitkeep
+
+# Config sensitif
+config/config.php
+koneksi.php
+
+# OS files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# MAMP specific
+.env
