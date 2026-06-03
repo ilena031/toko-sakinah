@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Applications/MAMP/Library/bin/mysql -u root -proot toko_sakinah -e \"SHOW TABLES;\")"
+    ]
+  }
+}

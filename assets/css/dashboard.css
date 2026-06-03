@@ -1,0 +1,332 @@
+/* ================================================================
+   DASHBOARD PELANGGAN — CSS
+   ================================================================ */
+
+/* ── Dashboard Layout ──────────────────────────────────────────── */
+.dashboard-wrapper {
+  padding: 30px 0;
+}
+
+/* ── Welcome Card ──────────────────────────────────────────────── */
+.welcome-card {
+  background: linear-gradient(135deg, var(--pink-primary) 0%, #EC407A 50%, #F48FB1 100%);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.welcome-card::after {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  right: 40px;
+  bottom: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.welcome-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.welcome-card p {
+  opacity: 0.85;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.welcome-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.welcome-stat {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  text-align: center;
+  min-width: 110px;
+}
+
+.welcome-stat .stat-number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  display: block;
+}
+
+.welcome-stat .stat-label {
+  font-size: 11.5px;
+  opacity: 0.8;
+}
+
+/* ── Dashboard Tabs ────────────────────────────────────────────── */
+.dashboard-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--gray-300);
+  margin-bottom: 28px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.dashboard-tabs::-webkit-scrollbar { display: none; }
+
+.dash-tab {
+  padding: 12px 22px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--gray-500);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dash-tab:hover {
+  color: var(--pink-primary);
+  background: var(--pink-light);
+}
+
+.dash-tab.active {
+  color: var(--pink-primary);
+  border-bottom-color: var(--pink-primary);
+}
+
+.dash-tab i {
+  font-size: 16px;
+}
+
+/* ── Dashboard Cards ───────────────────────────────────────────── */
+.dash-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.dash-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.dash-card-header h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gray-900);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dash-card-header h5 i {
+  color: var(--pink-primary);
+}
+
+/* ── Profile Form ──────────────────────────────────────────────── */
+.profile-form .form-group {
+  margin-bottom: 18px;
+}
+
+.profile-form .form-group label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--gray-700);
+  margin-bottom: 6px;
+}
+
+.profile-form .form-group input,
+.profile-form .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-family: var(--font-body);
+  color: var(--gray-900);
+  transition: var(--transition);
+}
+
+.profile-form .form-group input:focus,
+.profile-form .form-group textarea:focus {
+  border-color: var(--pink-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.profile-form .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.profile-form .btn-save {
+  padding: 10px 28px;
+  background: var(--pink-primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.profile-form .btn-save:hover {
+  background: var(--pink-dark);
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+/* ── Order Table ───────────────────────────────────────────────── */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table thead th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 12px 14px;
+  border-bottom: 2px solid var(--gray-300);
+  text-align: left;
+}
+
+.order-table tbody td {
+  padding: 14px;
+  font-size: 13px;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.order-table tbody tr:hover {
+  background: var(--gray-100);
+}
+
+.order-table .no-pesanan {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: 13px;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.status-menunggu    { background: #FFF3E0; color: #E65100; }
+.status-dikonfirmasi { background: #E3F2FD; color: #1565C0; }
+.status-diproses    { background: #E8F5E9; color: #2E7D32; }
+.status-dikirim     { background: #F3E5F5; color: #7B1FA2; }
+.status-selesai     { background: #E8F5E9; color: #1B5E20; }
+.status-dibatalkan  { background: #FFEBEE; color: #C62828; }
+
+/* ── Empty State ───────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--gray-500);
+}
+
+.empty-state i {
+  font-size: 52px;
+  opacity: 0.2;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.empty-state h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 6px;
+}
+
+.empty-state p {
+  font-size: 13px;
+}
+
+/* ── Logout Button ─────────────────────────────────────────────── */
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1.5px solid var(--red-badge);
+  color: var(--red-badge);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-logout:hover {
+  background: var(--red-badge);
+  color: var(--white);
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .welcome-card { padding: 24px; }
+  .welcome-card h3 { font-size: 18px; }
+  .welcome-stats { flex-direction: column; gap: 10px; }
+  .welcome-stat { min-width: auto; }
+
+  .order-table { font-size: 12px; }
+  .order-table thead th,
+  .order-table tbody td { padding: 10px 8px; }
+
+  .dash-card { padding: 18px; }
+}
+
+@media (max-width: 575.98px) {
+  .dashboard-wrapper { padding: 16px 0; }
+}

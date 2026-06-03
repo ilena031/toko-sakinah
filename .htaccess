@@ -1,0 +1,44 @@
+# ════════════════════════════════════════════════
+# TOKO SAKINAH ONLINE — Root .htaccess
+# ════════════════════════════════════════════════
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# Hide sensitive files
+<FilesMatch "(^\.|composer\.(json|lock)|\.env|\.git)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access ke config & koneksi langsung dari URL
+<FilesMatch "^(koneksi|config)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# UTF-8 default
+AddDefaultCharset UTF-8
+
+# Compress text content untuk hemat bandwidth
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache static assets (1 bulan)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
