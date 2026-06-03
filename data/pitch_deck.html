@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Toko Sakinah Online — Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+:root {
+  --pink:       #E91E63;
+  --pink-dark:  #AD1457;
+  --pink-soft:  #FCE4EC;
+  --pink-light: #FFF0F5;
+  --blue:       #1E88E5;
+  --blue-dark:  #0D47A1;
+  --blue-soft:  #E3F2FD;
+  --gold:       #FFC107;
+  --gold-soft:  #FFF8E1;
+  --gold-dark:  #B28704;
+  --text:       #0F172A;
+  --text-2:     #334155;
+  --muted:      #64748B;
+  --bg:         #F8FAFC;
+  --border:     #E2E8F0;
+  --grad-pink:  linear-gradient(135deg, #E91E63 0%, #F06292 100%);
+  --grad-cool:  linear-gradient(135deg, #1E88E5 0%, #64B5F6 100%);
+  --grad-hero:  linear-gradient(135deg, #FFF0F5 0%, #FCE4EC 50%, #F8BBD0 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #1a1a2e;
+  color: var(--text);
+  padding: 40px 0;
+}
+
+.deck { display: flex; flex-direction: column; gap: 36px; align-items: center; }
+
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══ Brand footer ═══ */
+.brand-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.brand-footer img {
+  height: 22px;
+  width: 22px;
+  border-radius: 4px;
+}
+.brand-footer span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+.slide-num {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ═══ Typography ═══ */
+h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+.eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--pink);
+  display: inline-block;
+}
+.title-xl {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--text);
+}
+.title-l {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: var(--text);
+}
+.title-m {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+}
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--pink-dark);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.lead {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-2);
+  max-width: 580px;
+}
+.muted { color: var(--muted); }
+
+/* ═══ Source citations ═══ */
+.source {
+  font-size: 10.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+.source::before { content: '— '; }
+
+.sources-strip {
+  position: absolute;
+  bottom: 46px;
+  left: 64px;
+  right: 64px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+.sources-strip strong { color: var(--text-2); }
+
+/* ═══ Slide 1: Cover ═══ */
+.slide-cover {
+  background: var(--grad-hero);
+}
+.cover-mesh {
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(233,30,99,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cover-mesh-2 {
+  position: absolute;
+  bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(30,136,229,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cover-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.cover-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.cover-logo-block img {
+  height: 48px;
+  width: 48px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(233,30,99,0.25);
+}
+.cover-logo-block .brand-text strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+.cover-logo-block .brand-text span {
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.cover-title-line {
+  background: var(--grad-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cover-tagline {
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-2);
+  line-height: 1.6;
+  border-left: 4px solid var(--pink);
+  padding-left: 20px;
+  margin-top: 22px;
+  max-width: 530px;
+}
+.cover-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(15,23,42,0.1);
+}
+.cover-meta .meta-item {
+  font-size: 13px;
+  color: var(--muted);
+}
+.cover-meta .meta-item strong {
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.cover-visual {
+  background: var(--grad-pink);
+  aspect-ratio: 1/1;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(233,30,99,0.4);
+}
+.cover-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.25), transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1), transparent 50%);
+}
+.cover-visual img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  padding: 30px;
+}
+.cover-tag-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.cover-tag {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(233,30,99,0.2);
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.cover-tag.gold {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+
+/* ═══ Stat cards ═══ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 12px 0;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--grad-pink);
+}
+.stat-card.blue::before { background: var(--grad-cool); }
+.stat-card.gold::before { background: linear-gradient(135deg, #FFC107, #FFD740); }
+.stat-card .stat-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--pink-soft);
+  color: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.stat-card.blue .stat-icon { background: var(--blue-soft); color: var(--blue); }
+.stat-card.gold .stat-icon { background: var(--gold-soft); color: var(--gold-dark); }
+.stat-card .stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+}
+.stat-card .stat-num .unit {
+  font-size: 18px;
+  color: var(--pink);
+  font-weight: 700;
+  margin-left: 4px;
+}
+.stat-card.blue .stat-num .unit { color: var(--blue); }
+.stat-card.gold .stat-num .unit { color: var(--gold-dark); }
+.stat-card .stat-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.stat-card .stat-src {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ═══ Insight box ═══ */
+.insight-box {
+  background: linear-gradient(135deg, var(--pink-soft) 0%, #fff 100%);
+  border-left: 4px solid var(--pink);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+.insight-box .label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--pink-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.insight-box p {
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* ═══ Slide 3: Root causes ═══ */
+.cause-stack { margin-top: 14px; flex: 1; }
+.cause-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cause-row:last-child { border-bottom: none; }
+.cause-num {
+  width: 52px; height: 52px;
+  background: var(--grad-pink);
+  color: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(233,30,99,0.3);
+}
+.cause-content { flex: 1; }
+.cause-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.cause-content p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.cause-content .data-callout {
+  display: inline-block;
+  background: var(--pink-soft);
+  color: var(--pink-dark);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+
+.gap-statement {
+  background: var(--gold-soft);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.gap-statement i { color: var(--gold-dark); font-size: 22px; flex-shrink: 0; }
+.gap-statement p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  font-weight: 500;
+}
+.gap-statement p strong { color: var(--pink-dark); font-weight: 700; }
+
+/* ═══ Solution cards ═══ */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  flex: 1;
+  margin-top: 18px;
+}
+.pillar {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 24px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+.pillar.hero {
+  background: linear-gradient(150deg, #fff 0%, var(--pink-light) 100%);
+  border-color: var(--pink);
+  box-shadow: 0 15px 40px rgba(233,30,99,0.18);
+  transform: translateY(-6px);
+}
+.pillar-badge {
+  position: absolute;
+  top: -10px; right: 16px;
+  background: var(--gold);
+  color: var(--gold-dark);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 11px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pillar-icon {
+  width: 56px; height: 56px;
+  background: var(--pink-soft);
+  color: var(--pink);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+.pillar.hero .pillar-icon {
+  background: var(--grad-pink);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(233,30,99,0.3);
+}
+.pillar h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.pillar p {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.pillar p strong { color: var(--text); }
+.pillar-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.p-tag {
+  background: rgba(15,23,42,0.05);
+  color: var(--text-2);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.pillar.hero .p-tag {
+  background: rgba(233,30,99,0.1);
+  color: var(--pink-dark);
+}
+
+/* ═══ STEM slide ═══ */
+.stem-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  flex: 1;
+  margin-top: 16px;
+}
+.stem-block {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--pink);
+}
+.stem-block.blue { border-left-color: var(--blue); }
+.stem-block.gold { border-left-color: var(--gold-dark); }
+.stem-block h3 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stem-block.blue h3 { color: var(--blue); }
+.stem-block.gold h3 { color: var(--gold-dark); }
+.stem-block ul {
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-2);
+}
+.stem-block li::before {
+  content: '▸';
+  color: var(--pink);
+  font-weight: 700;
+  margin-right: 6px;
+}
+.stem-block.blue li::before { color: var(--blue); }
+.stem-block.gold li::before { color: var(--gold-dark); }
+
+.tech-stack {
+  background: linear-gradient(150deg, var(--bg) 0%, #fff 100%);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tech-stack h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+.tech-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.tech-tag {
+  background: var(--pink-soft);
+  color: var(--pink-dark);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: 0;
+  min-width: 84px;
+  text-align: center;
+}
+.tech-tag.blue { background: var(--blue-soft); color: var(--blue-dark); }
+.tech-tag.gold { background: var(--gold-soft); color: var(--gold-dark); }
+.tech-tag.dark { background: var(--text); color: #fff; }
+
+.code-stats {
+  background: var(--text);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: auto;
+  display: flex;
+  gap: 22px;
+  justify-content: space-around;
+}
+.code-stats .cs {
+  text-align: center;
+}
+.code-stats .cs strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--gold);
+  line-height: 1;
+}
+.code-stats .cs span {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ═══ Demo slide ═══ */
+.demo-banner {
+  background: linear-gradient(135deg, var(--text) 0%, #1E293B 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.demo-banner .live-dot {
+  width: 10px; height: 10px;
+  background: #00E676;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00E676;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+.demo-banner .live-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #00E676;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.demo-banner .live-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+}
+.demo-banner .live-cta {
+  background: var(--pink);
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  flex: 1;
+}
+.demo-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-card.hero {
+  grid-row: 1 / 3;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0F172A 100%);
+  border: 2px solid var(--pink);
+  box-shadow: 0 15px 30px rgba(233,30,99,0.2);
+}
+.demo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.demo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+}
+.demo-placeholder i {
+  font-size: 44px;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+.demo-card.hero .demo-placeholder { color: rgba(255,255,255,0.7); }
+.demo-card.hero .demo-placeholder i { color: var(--pink); }
+.demo-placeholder .l { font-weight: 700; font-size: 14px; color: var(--text); }
+.demo-card.hero .demo-placeholder .l { color: #fff; font-size: 16px; }
+.demo-placeholder .s { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.demo-card.hero .demo-placeholder .s { color: rgba(255,255,255,0.6); }
+.demo-card.hero .demo-placeholder .file-hint {
+  margin-top: 8px;
+  background: rgba(233,30,99,0.15);
+  border: 1px dashed rgba(233,30,99,0.5);
+  color: #FCE4EC;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+}
+.demo-placeholder .file-hint {
+  margin-top: 8px;
+  background: var(--pink-soft);
+  border: 1px dashed var(--pink);
+  color: var(--pink-dark);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+}
+.demo-card .card-label {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(255,255,255,0.95);
+  color: var(--text);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.demo-card.hero .card-label {
+  background: var(--pink);
+  color: #fff;
+}
+
+/* ═══ Slide 7: Timeline ═══ */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 18px 0;
+}
+.tl-step {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 16px 14px;
+  border-top: 4px solid var(--pink);
+  position: relative;
+}
+.tl-step .ts-icon {
+  width: 32px; height: 32px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+.tl-step .ts-day {
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tl-step .ts-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 3px;
+  color: var(--text);
+}
+.tl-step .ts-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.feasibility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  flex: 1;
+}
+.feas-panel {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.feas-panel h3 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feas-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.feas-row i { color: var(--pink); font-size: 14px; min-width: 16px; }
+.feas-row strong { color: var(--text); font-weight: 700; }
+
+.roadmap-quarter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+.rq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 11px;
+}
+.rq-item strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--pink);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.rq-item span { color: var(--text-2); line-height: 1.4; }
+
+/* ═══ Slide 8: Business ═══ */
+.biz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  margin-top: 16px;
+}
+.biz-panel h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.revenue-table {
+  background: var(--bg);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.rev-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 11px 16px;
+  font-size: 12.5px;
+  border-bottom: 1px solid var(--border);
+}
+.rev-row:last-child { border-bottom: none; }
+.rev-row.primary {
+  background: linear-gradient(90deg, var(--pink-soft) 0%, #fff 100%);
+  border-left: 4px solid var(--pink);
+}
+.rev-row .rev-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rev-row .rev-label i {
+  color: var(--pink);
+  font-size: 14px;
+}
+.rev-row .rev-label strong {
+  font-weight: 600;
+  color: var(--text);
+}
+.rev-row .rev-label small {
+  display: block;
+  color: var(--muted);
+  font-size: 10.5px;
+  margin-top: 1px;
+}
+.rev-row .rev-price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--pink-dark);
+  background: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.unit-econ {
+  background: var(--text);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 14px;
+}
+.unit-econ h4 {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.unit-econ-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+.ue-item {
+  text-align: center;
+}
+.ue-item .num {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--gold);
+  line-height: 1;
+}
+.ue-item .lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.projection-chart {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 18px;
+}
+.chart-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 90px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.chart-row .month {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.chart-row .bar-wrap {
+  height: 28px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.chart-row .bar {
+  height: 100%;
+  background: var(--grad-pink);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.chart-row .value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text);
+  text-align: right;
+}
+
+.market-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+.ms-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.ms-item .lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ms-item .val {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+/* ═══ Slide 9: Impact ═══ */
+.impact-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+  margin-top: 16px;
+}
+.impact-block {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+}
+.impact-block.pink { border-color: rgba(233,30,99,0.3); background: linear-gradient(160deg, #fff 0%, var(--pink-light) 100%); }
+.impact-block.blue { border-color: rgba(30,136,229,0.3); background: linear-gradient(160deg, #fff 0%, var(--blue-soft) 100%); }
+.impact-block.gold { border-color: rgba(255,193,7,0.4); background: linear-gradient(160deg, #fff 0%, var(--gold-soft) 100%); }
+.impact-block .ib-icon {
+  width: 50px; height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.impact-block.pink .ib-icon { background: var(--pink); color: #fff; }
+.impact-block.blue .ib-icon { background: var(--blue); color: #fff; }
+.impact-block.gold .ib-icon { background: var(--gold-dark); color: #fff; }
+.impact-block h3 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.impact-block ul {
+  list-style: none;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+  flex: 1;
+}
+.impact-block li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+}
+.impact-block li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 8px; height: 2px;
+  background: var(--pink);
+}
+.impact-block.blue li::before { background: var(--blue); }
+.impact-block.gold li::before { background: var(--gold-dark); }
+
+.reflection {
+  background: linear-gradient(135deg, var(--text) 0%, #1E293B 100%);
+  border-radius: 14px;
+  padding: 16px 22px;
+  margin-top: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.reflection .quote-icon {
+  color: var(--gold);
+  font-size: 32px;
+  flex-shrink: 0;
+}
+.reflection p {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.95);
+}
+.reflection p strong { color: var(--gold); font-weight: 700; }
+
+/* ═══ Slide 10: Conclusion ═══ */
+.slide-closing {
+  background: linear-gradient(135deg, #fff 0%, var(--pink-light) 60%, var(--pink-soft) 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 64px;
+  position: relative;
+}
+.closing-mesh-1 {
+  position: absolute;
+  top: -150px; right: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(233,30,99,0.2), transparent 70%);
+  border-radius: 50%;
+}
+.closing-mesh-2 {
+  position: absolute;
+  bottom: -200px; left: -150px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(30,136,229,0.12), transparent 70%);
+  border-radius: 50%;
+}
+.closing-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.closing-narrative {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 22px 0;
+}
+.cn-block {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15,23,42,0.05);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+.cn-block .cn-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.cn-block h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.cn-block p {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.cn-arrow {
+  color: var(--pink);
+  font-size: 28px;
+}
+.cn-block.problem { border-left: 3px solid #C62828; }
+.cn-block.solution { border-left: 3px solid var(--pink); background: linear-gradient(135deg, rgba(252,228,236,0.9), rgba(255,255,255,0.85)); }
+.cn-block.impact { border-left: 3px solid #2E7D32; }
+
+.closing-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+.cstat {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  border: 1px solid rgba(233,30,99,0.15);
+}
+.cstat .cs-num {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  background: var(--grad-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.cstat .cs-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.final-cta {
+  background: linear-gradient(135deg, var(--text) 0%, #1E293B 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+.final-cta-logo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.final-cta-logo img { width: 46px; height: 46px; }
+.final-cta .cta-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.final-cta .cta-text p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.final-cta .cta-meta {
+  text-align: right;
+  font-size: 11px;
+}
+.final-cta .cta-meta .url {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.final-cta .cta-meta .author {
+  font-weight: 600;
+  color: #fff;
+}
+.final-cta .cta-meta .small {
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+/* ═══ Toolbar ═══ */
+.deck-toolbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 100;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.deck-toolbar button {
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+.deck-toolbar button:hover { background: var(--pink-dark); }
+
+/* ═══ Print ═══ */
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  body { background: #fff; padding: 0; }
+  .deck { gap: 0; }
+  .slide {
+    page-break-after: always;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .deck-toolbar { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="deck-toolbar">
+  <span>📄 10 Slides · English</span>
+  <button onclick="window.print()">Save as PDF</button>
+</div>
+
+<div class="deck">
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 1 — COVER & PERSONAL MOTIVATION -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide slide-cover">
+  <div class="cover-mesh"></div>
+  <div class="cover-mesh-2"></div>
+
+  <div class="cover-grid">
+    <div>
+      <div class="cover-logo-block">
+        <img src="logo_toko.png" alt="Toko Sakinah">
+        <div class="brand-text">
+          <strong>Toko Sakinah</strong>
+          <span>Heritage Since 2010</span>
+        </div>
+      </div>
+
+      <div class="cover-tag-row">
+        <span class="cover-tag">AMGALA Foundation Finals 2026</span>
+        <span class="cover-tag gold">STEM Innovation</span>
+      </div>
+
+      <h1 class="title-xl" style="margin-bottom:8px;">
+        <span class="cover-title-line">Toko Sakinah</span><br>
+        <span style="color:var(--text);">Online</span>
+      </h1>
+
+      <div class="subtitle">
+        Empowering Indonesia's 65 million MSMEs<br>
+        through AI-powered, browser-native commerce
+      </div>
+
+      <p class="cover-tagline">
+        "Why should world-class technology — AI body scanning,
+        secure payments, custom production workflows — be
+        exclusive to premium brands when 65 million
+        small businesses need them more?"
+      </p>
+
+      <div class="cover-meta">
+        <div class="meta-item">
+          <strong>Presenter</strong>
+          [Your Full Name]
+        </div>
+        <div class="meta-item">
+          <strong>Theme</strong>
+          STEM Innovation for Real-World Impact
+        </div>
+        <div class="meta-item">
+          <strong>Live Demo</strong>
+          tokosakinah.com
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-visual">
+      <img src="logo_toko.png" alt="Logo">
+    </div>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">01 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 2 — PROBLEM VALIDATION (Data Heavy) -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Problem Validation</div>
+  <h1 class="title-l">Indonesia's MSME Sector:<br>The Largest Underserved Digital Economy on Earth</h1>
+
+  <div class="stats-row" style="margin-top:22px;">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="bi bi-shop"></i></div>
+      <div class="stat-num">64.2<span class="unit">million</span></div>
+      <div class="stat-label">MSMEs in Indonesia, contributing 61% of national GDP and 97% of employment.</div>
+      <div class="stat-src">Source: Ministry of Cooperatives & SMEs (KemenkopUKM), 2023</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-icon"><i class="bi bi-wifi-off"></i></div>
+      <div class="stat-num">35<span class="unit">%</span></div>
+      <div class="stat-label">of MSMEs are digitally connected — meaning ~42 million remain offline.</div>
+      <div class="stat-src">Source: KemenkopUKM Digital Adoption Report, 2023</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-icon"><i class="bi bi-cash-coin"></i></div>
+      <div class="stat-num">USD 90<span class="unit">B</span></div>
+      <div class="stat-label">Indonesia's digital economy in 2024, projected to reach USD 360B by 2030.</div>
+      <div class="stat-src">Source: e-Conomy SEA 2024 (Google, Temasek, Bain)</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+    <div class="insight-box">
+      <div class="label"><i class="bi bi-bullseye"></i> Niche Markets Quantified</div>
+      <p>
+        <strong>School Uniforms:</strong> ~53 million students (Statistik Indonesia, BPS 2023)
+        × avg. IDR 750k/year = <strong>~IDR 40 trillion annual market</strong>.
+        <br><strong>Pilgrimage:</strong> 221,000 Hajj + ~1.5M Umrah/year
+        (Ministry of Religious Affairs, 2024).
+      </p>
+    </div>
+    <div class="insight-box">
+      <div class="label"><i class="bi bi-exclamation-triangle"></i> The Cost of Mismatched Sizes</div>
+      <p>
+        Online apparel returns average <strong>20–40% globally</strong>,
+        primarily due to sizing errors — costing retailers $400+ billion/year worldwide
+        (Source: Statista Apparel Returns Report, 2023; National Retail Federation, 2023).
+      </p>
+    </div>
+  </div>
+
+  <div class="sources-strip">
+    <strong>Data sources:</strong>
+    BPS (Statistik Indonesia), KemenkopUKM Report 2023,
+    e-Conomy SEA 2024 by Google/Temasek/Bain,
+    Indonesian Ministry of Religious Affairs (Kemenag),
+    Statista Apparel Returns Report 2023, NRF.
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">02 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 3 — ROOT CAUSE ANALYSIS -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Root Cause Analysis</div>
+  <h1 class="title-l">Why Existing Platforms Fail<br>the Niche MSME Market</h1>
+
+  <div class="cause-stack">
+    <div class="cause-row">
+      <div class="cause-num">1</div>
+      <div class="cause-content">
+        <h3>Marketplaces Penalize Identity, Reward Scale</h3>
+        <p>Large marketplaces (Shopee, Tokopedia) have over 15M sellers, with discovery algorithms favoring high-budget advertisers. Small heritage stores like Toko Sakinah become invisible. Commission rates of 5–12% per transaction further squeeze already thin margins.</p>
+        <span class="data-callout">Shopee fee: up to 12% per category (Source: Shopee Seller Center, 2024)</span>
+      </div>
+    </div>
+
+    <div class="cause-row">
+      <div class="cause-num">2</div>
+      <div class="cause-content">
+        <h3>Online Apparel Shopping Is a Sizing Gamble</h3>
+        <p>Without physical try-on, consumers default to "best guess" sizing, driving the 20–40% return rate. Premium brands deploy AR/VR fitting (Zara, ASOS) requiring $10M+ investments. This technology gap leaves MSMEs unable to compete on shopper confidence.</p>
+        <span class="data-callout">ASOS reportedly invested £100M+ in virtual fitting (Source: Retail Week, 2023)</span>
+      </div>
+    </div>
+
+    <div class="cause-row">
+      <div class="cause-num">3</div>
+      <div class="cause-content">
+        <h3>B2B Custom Orders Drown in WhatsApp Chaos</h3>
+        <p>Schools and institutions order uniforms in bulk via fragmented WhatsApp threads. There's no structured platform for spec negotiation, formal quotations, deposit tracking, or production timelines — leading to miscommunication, disputes, and lost deals.</p>
+        <span class="data-callout">WhatsApp Business: 200M+ users in Indonesia (Meta, 2023)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-statement">
+    <i class="bi bi-lightbulb-fill"></i>
+    <p>
+      <strong>THE GAP:</strong> No platform combines <strong>niche-focused branding for MSMEs</strong>,
+      <strong>affordable AI sizing technology</strong>, and <strong>structured B2B custom-order management</strong>
+      — until now.
+    </p>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">03 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 4 — SOLUTION OVERVIEW -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Solution Overview</div>
+  <h1 class="title-l">Three Integrated Pillars,<br>One Inclusive Platform</h1>
+
+  <div class="pillar-grid">
+    <div class="pillar">
+      <div class="pillar-icon"><i class="bi bi-bag-heart-fill"></i></div>
+      <h3>E-Commerce Foundation</h3>
+      <p>Full storefront with integrated <strong>Midtrans payments</strong> (GoPay, QRIS, VA, Cards). Takes only <strong>1% per transaction</strong> versus 5–12% on legacy marketplaces. Branded — store identity preserved.</p>
+      <div class="pillar-tags">
+        <span class="p-tag">Midtrans Snap</span>
+        <span class="p-tag">Branded UI</span>
+        <span class="p-tag">PDF Receipts</span>
+      </div>
+    </div>
+
+    <div class="pillar hero">
+      <span class="pillar-badge">⭐ Core Innovation</span>
+      <div class="pillar-icon"><i class="bi bi-camera2"></i></div>
+      <h3>AI Body Scanner</h3>
+      <p>Live webcam scanning powered by <strong>MediaPipe Pose</strong> (Google's open-source ML). Recommends sizes calibrated to <strong>Indonesian school grade tiers</strong> (Kindergarten → Senior High → Adult). Runs 100% in-browser — <strong>zero AI server cost</strong>.</p>
+      <div class="pillar-tags">
+        <span class="p-tag">Real-time</span>
+        <span class="p-tag">Privacy-first</span>
+        <span class="p-tag">Free to deploy</span>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-icon"><i class="bi bi-palette2"></i></div>
+      <h3>Custom Order Studio</h3>
+      <p>Structured intake form, design reference uploads, real-time consultation chat between buyer and admin, formal price quotations, deposit collection via Midtrans, and production progress tracking.</p>
+      <div class="pillar-tags">
+        <span class="p-tag">B2B Workflow</span>
+        <span class="p-tag">Chat System</span>
+        <span class="p-tag">Quote Builder</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top:14px;">
+    <div class="label"><i class="bi bi-stars"></i> Unique Differentiator</div>
+    <p>Body scanner calibrated to <strong>Indonesian school grade size charts</strong> — the first
+      consumer-facing implementation worldwide. Most fitting AI ignores age-segmented sizing entirely.</p>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">04 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 5 — STEM APPLICATION -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">STEM / Technical Application</div>
+  <h1 class="title-l">Engineering the Affordable AI:<br>Math, Computer Vision, and Secure Architecture</h1>
+
+  <div class="stem-layout">
+    <div>
+      <div class="stem-block">
+        <h3><i class="bi bi-calculator"></i> Applied Mathematics</h3>
+        <ul>
+          <li>Anthropometric ratio: chest = shoulder × 2.4 (validated against industry sizing tables)</li>
+          <li>Camera calibration: face width = 14.5 cm reference for pixel-to-cm conversion</li>
+          <li>Moving-average smoothing across 30 frames to stabilize measurements</li>
+        </ul>
+      </div>
+      <div class="stem-block blue">
+        <h3><i class="bi bi-eye-fill"></i> Computer Vision Science</h3>
+        <ul>
+          <li>MediaPipe Pose: 33-landmark real-time body detection (WebAssembly)</li>
+          <li>Visibility filtering: only landmarks &gt;0.6 confidence trigger measurement</li>
+          <li>Trade-off: client-side ML = privacy preserved, no GPU server cost</li>
+        </ul>
+      </div>
+      <div class="stem-block gold">
+        <h3><i class="bi bi-gear-wide-connected"></i> Systems Engineering</h3>
+        <ul>
+          <li>9-table relational schema (3NF normalized for transactional integrity)</li>
+          <li>SHA-512 HMAC signature verification on payment webhooks</li>
+          <li>.htaccess hardening + MIME validation on every file upload</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tech-stack">
+      <h3>System Architecture</h3>
+      <div class="tech-line"><span class="tech-tag">Frontend</span><span>HTML5 + CSS3 + Vanilla JS</span></div>
+      <div class="tech-line"><span class="tech-tag">AI Engine</span><span>MediaPipe Pose · WebAssembly</span></div>
+      <div class="tech-line"><span class="tech-tag blue">Backend</span><span>PHP 8.2 + Composer</span></div>
+      <div class="tech-line"><span class="tech-tag blue">Database</span><span>MySQL 8 · utf8mb4</span></div>
+      <div class="tech-line"><span class="tech-tag gold">Payments</span><span>Midtrans Snap API</span></div>
+      <div class="tech-line"><span class="tech-tag gold">PDF / Excel</span><span>mPDF + PhpSpreadsheet</span></div>
+      <div class="tech-line"><span class="tech-tag dark">Hosting</span><span>Hostinger LiteSpeed + SSL</span></div>
+
+      <div class="code-stats">
+        <div class="cs"><strong>27</strong><span>PHP Files</span></div>
+        <div class="cs"><strong>4,500+</strong><span>Lines Code</span></div>
+        <div class="cs"><strong>9</strong><span>DB Tables</span></div>
+        <div class="cs"><strong>14</strong><span>Days</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">05 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 6 — LIVE PROTOTYPE / DEMO -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Prototype · System Flow</div>
+  <h1 class="title-l">Not a Mockup — Real Production</h1>
+
+  <div class="demo-banner">
+    <div class="live-dot"></div>
+    <div>
+      <div class="live-label">Live in Production</div>
+      <div class="live-url">tokosakinah.com</div>
+    </div>
+    <div class="live-cta">Click during demo to launch live ↗</div>
+  </div>
+
+  <div class="demo-grid">
+    <!-- HERO CARD: Body Scanner (Try-On) -->
+    <div class="demo-card hero">
+      <span class="card-label">⭐ Try-On Scanner</span>
+      <img src="screenshots/02-tryon.png" alt="Body Scanner in action"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="demo-placeholder" style="display:none;">
+        <i class="bi bi-camera2-fill"></i>
+        <div class="l">AI Body Scanner</div>
+        <div class="s">Live measurement &amp; size recommendation</div>
+        <div class="file-hint">save: screenshots/02-tryon.png</div>
+      </div>
+    </div>
+
+    <!-- Landing -->
+    <div class="demo-card">
+      <span class="card-label">Storefront</span>
+      <img src="screenshots/01-landing.png" alt="Landing page"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="demo-placeholder" style="display:none;">
+        <i class="bi bi-house-door"></i>
+        <div class="l">Landing</div>
+        <div class="file-hint">screenshots/01-landing.png</div>
+      </div>
+    </div>
+
+    <!-- Custom Order -->
+    <div class="demo-card">
+      <span class="card-label">B2B Studio</span>
+      <img src="screenshots/03-custom.png" alt="Custom order"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="demo-placeholder" style="display:none;">
+        <i class="bi bi-palette2"></i>
+        <div class="l">Custom Order</div>
+        <div class="file-hint">screenshots/03-custom.png</div>
+      </div>
+    </div>
+
+    <!-- Payment -->
+    <div class="demo-card">
+      <span class="card-label">Midtrans</span>
+      <img src="screenshots/04-payment.png" alt="Payment"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="demo-placeholder" style="display:none;">
+        <i class="bi bi-credit-card-2-front"></i>
+        <div class="l">Payment</div>
+        <div class="file-hint">screenshots/04-payment.png</div>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="demo-card">
+      <span class="card-label">Admin</span>
+      <img src="screenshots/05-admin.png" alt="Admin"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="demo-placeholder" style="display:none;">
+        <i class="bi bi-speedometer2"></i>
+        <div class="l">Admin Dashboard</div>
+        <div class="file-hint">screenshots/05-admin.png</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sources-strip">
+    📷 To populate this slide: capture screenshots and save them to
+    <strong>data/screenshots/</strong> with the filenames above. For the Try-On hero, ideally use a
+    <strong>screen recording GIF</strong> of the scanner detecting body landmarks in real-time.
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">06 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 7 — FEASIBILITY & EXECUTION -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Feasibility &amp; Execution Plan</div>
+  <h1 class="title-l">From Idea to Production<br>in 14 Days · Validated Roadmap to 100 Stores</h1>
+
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="ts-icon">1</div>
+      <div class="ts-day">Day 1–7</div>
+      <div class="ts-title">Foundation</div>
+      <div class="ts-desc">DB schema, auth, catalog, product detail</div>
+    </div>
+    <div class="tl-step">
+      <div class="ts-icon">2</div>
+      <div class="ts-day">Day 8–11</div>
+      <div class="ts-title">Core Engine</div>
+      <div class="ts-desc">Cart → Midtrans, custom order, AI try-on</div>
+    </div>
+    <div class="tl-step">
+      <div class="ts-icon">3</div>
+      <div class="ts-day">Day 12–13</div>
+      <div class="ts-title">Admin Suite</div>
+      <div class="ts-desc">CRUD, dashboard, order &amp; chat management</div>
+    </div>
+    <div class="tl-step">
+      <div class="ts-icon">4</div>
+      <div class="ts-day">Day 14</div>
+      <div class="ts-title">Deploy</div>
+      <div class="ts-desc">Polish, security audit, production live</div>
+    </div>
+  </div>
+
+  <div class="feasibility-grid">
+    <div class="feas-panel">
+      <h3><i class="bi bi-cash-coin"></i> Resources Spent</h3>
+      <div class="feas-row"><i class="bi bi-person-fill"></i><span>Solo full-stack developer</span></div>
+      <div class="feas-row"><i class="bi bi-coin"></i><span><strong>&lt; IDR 500,000</strong> total dev cost</span></div>
+      <div class="feas-row"><i class="bi bi-tools"></i><span>100% open-source stack</span></div>
+      <div class="feas-row"><i class="bi bi-clock"></i><span>4–6 hours/day execution</span></div>
+      <div class="feas-row"><i class="bi bi-globe"></i><span>Deployed on Hostinger (LiteSpeed)</span></div>
+      <div class="feas-row"><i class="bi bi-shield-check"></i><span>HTTPS, .htaccess hardened</span></div>
+    </div>
+
+    <div class="feas-panel">
+      <h3><i class="bi bi-signpost-split"></i> 12-Month Roadmap</h3>
+      <div class="roadmap-quarter">
+        <div class="rq-item">
+          <strong>Q1 / M1–3</strong>
+          <span>UX validation with Toko Sakinah real owner; iterate based on feedback</span>
+        </div>
+        <div class="rq-item">
+          <strong>Q2 / M4–6</strong>
+          <span>Pilot rollout to 5 MSMEs in Palembang, Surabaya; multi-tenant architecture</span>
+        </div>
+        <div class="rq-item">
+          <strong>Q3 / M7–9</strong>
+          <span>Self-service onboarding; influencer marketing; reach 60 stores</span>
+        </div>
+        <div class="rq-item">
+          <strong>Q4 / M10–12</strong>
+          <span>100 stores active, IDR 9.9M MRR, prepare seed funding round</span>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;padding-top:8px;border-top:1px dashed var(--border);font-size:11.5px;color:var(--text-2);">
+        <strong style="color:var(--pink);">Risk mitigation:</strong>
+        if pivot needed → white-label SaaS for Indonesia's UMKM cooperatives
+        (Kop. Indonesia: 130K+ co-ops, KemenkopUKM 2024).
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">07 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 8 — BUSINESS & FINANCIAL PROJECTION -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Business &amp; Financial Projection</div>
+  <h1 class="title-l">Sustainable Unit Economics<br>Built for MSME Affordability</h1>
+
+  <div class="biz-grid">
+    <div class="biz-panel">
+      <h3><i class="bi bi-cash-stack"></i> Five Revenue Streams</h3>
+      <div class="revenue-table">
+        <div class="rev-row primary">
+          <div class="rev-label">
+            <i class="bi bi-star-fill"></i>
+            <div>
+              <strong>SaaS Subscription</strong>
+              <small>Core revenue · Free 30-day trial</small>
+            </div>
+          </div>
+          <div class="rev-price">IDR 99K/mo</div>
+        </div>
+        <div class="rev-row">
+          <div class="rev-label">
+            <i class="bi bi-arrow-right-circle"></i>
+            <div>
+              <strong>Transaction Fee</strong>
+              <small>Volume-tied recurring income</small>
+            </div>
+          </div>
+          <div class="rev-price">1% / order</div>
+        </div>
+        <div class="rev-row">
+          <div class="rev-label">
+            <i class="bi bi-palette"></i>
+            <div>
+              <strong>Onboarding &amp; Branding</strong>
+              <small>One-time setup &amp; brand kit customization</small>
+            </div>
+          </div>
+          <div class="rev-price">IDR 1.5M</div>
+        </div>
+        <div class="rev-row">
+          <div class="rev-label">
+            <i class="bi bi-cpu"></i>
+            <div>
+              <strong>Premium AI Tier</strong>
+              <small>AR overlay, advanced analytics, multi-store</small>
+            </div>
+          </div>
+          <div class="rev-price">IDR 299K/mo</div>
+        </div>
+        <div class="rev-row">
+          <div class="rev-label">
+            <i class="bi bi-buildings"></i>
+            <div>
+              <strong>B2B Cooperative Deal</strong>
+              <small>Per-koperasi licensing (130K co-ops nationwide)</small>
+            </div>
+          </div>
+          <div class="rev-price">IDR 25M/yr</div>
+        </div>
+      </div>
+
+      <div class="unit-econ">
+        <h4><i class="bi bi-graph-up-arrow"></i> Unit Economics (per MSME)</h4>
+        <div class="unit-econ-grid">
+          <div class="ue-item">
+            <div class="num">IDR 500K</div>
+            <div class="lbl">CAC<br><span style="text-transform:none;">via partnerships</span></div>
+          </div>
+          <div class="ue-item">
+            <div class="num">IDR 2.4M</div>
+            <div class="lbl">LTV<br><span style="text-transform:none;">24-mo retention</span></div>
+          </div>
+          <div class="ue-item">
+            <div class="num">4.8×</div>
+            <div class="lbl">LTV / CAC<br><span style="text-transform:none;">healthy SaaS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-panel">
+      <h3><i class="bi bi-bar-chart-line-fill"></i> Year-One MRR Projection</h3>
+      <div class="projection-chart">
+        <div class="chart-row">
+          <div class="month">M3</div>
+          <div class="bar-wrap"><div class="bar" style="width:7%;">5</div></div>
+          <div class="value">IDR 495K</div>
+        </div>
+        <div class="chart-row">
+          <div class="month">M6</div>
+          <div class="bar-wrap"><div class="bar" style="width:24%;">25</div></div>
+          <div class="value">IDR 2.5M</div>
+        </div>
+        <div class="chart-row">
+          <div class="month">M9</div>
+          <div class="bar-wrap"><div class="bar" style="width:58%;">60</div></div>
+          <div class="value">IDR 5.9M</div>
+        </div>
+        <div class="chart-row">
+          <div class="month">M12</div>
+          <div class="bar-wrap"><div class="bar" style="width:100%;">100 stores</div></div>
+          <div class="value">IDR 9.9M MRR</div>
+        </div>
+      </div>
+
+      <div class="market-summary">
+        <div class="ms-item">
+          <div class="lbl">TAM</div>
+          <div class="val">64.2M MSMEs</div>
+        </div>
+        <div class="ms-item">
+          <div class="lbl">SAM</div>
+          <div class="val">~3M fashion/uniform</div>
+        </div>
+        <div class="ms-item">
+          <div class="lbl">SOM Y3</div>
+          <div class="val">10K stores</div>
+        </div>
+      </div>
+
+      <div class="insight-box" style="margin-top:12px;padding:10px 14px;">
+        <div class="label">Break-even Trigger</div>
+        <p style="font-size:12.5px;">15 active subscribers = IDR 1.5M/mo revenue covers hosting + Midtrans + customer support overhead. <strong>Targeted at Month 7.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sources-strip" style="bottom:36px;">
+    <strong>Methodology:</strong> CAC modeled from partnership-led B2B onboarding (cooperative channels);
+    LTV assumes 24-month retention (industry benchmark for SMB SaaS: 18-36 months, Source: SaaS Capital 2024).
+    Cooperative deal pricing referenced from Mekari, Jurnal.id, and similar SMB SaaS in Indonesia.
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">08 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 9 — IMPACT, SCALABILITY, LEADERSHIP -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="eyebrow">Social Impact · Scalability · Leadership</div>
+  <h1 class="title-l">Beyond Revenue:<br>Building an Inclusive Digital Economy</h1>
+
+  <div class="impact-row">
+    <div class="impact-block pink">
+      <div class="ib-icon"><i class="bi bi-globe-asia-australia"></i></div>
+      <h3>Social Impact</h3>
+      <ul>
+        <li>Each onboarded MSME adds 1–3 local jobs (admin, packer, courier liaison)</li>
+        <li>~42 million still-offline MSMEs (KemenkopUKM 2023) become addressable</li>
+        <li>Owners aged 50+ adopt digital tools through guided onboarding</li>
+        <li>Estimated <strong>IDR 100K–200K savings per child/year</strong> avoiding mis-sized uniforms</li>
+        <li>Pilgrimage market: 1.7M+ travelers/year access verified halal product catalogs</li>
+      </ul>
+    </div>
+
+    <div class="impact-block blue">
+      <div class="ib-icon"><i class="bi bi-graph-up"></i></div>
+      <h3>Scalability</h3>
+      <ul>
+        <li><strong>Vertical:</strong> uniforms → Muslim fashion → halal cosmetics → packaged foods</li>
+        <li><strong>Geographic:</strong> Indonesia (Y1) → Malaysia, Brunei (Y2) — shared school uniform culture</li>
+        <li><strong>Tech:</strong> AR overlay (Y2), voice ordering in Bahasa (Y2), ML stock prediction (Y3)</li>
+        <li><strong>Partnership:</strong> integration with 130K+ Indonesian cooperatives (Kop. Indonesia)</li>
+        <li>Architecture supports multi-tenant rollout — engineered for Day-1 horizontal scaling</li>
+      </ul>
+    </div>
+
+    <div class="impact-block gold">
+      <div class="ib-icon"><i class="bi bi-person-workspace"></i></div>
+      <h3>What I Gained</h3>
+      <ul>
+        <li><strong>Customer empathy first:</strong> spent days understanding owner workflows before writing code</li>
+        <li><strong>Engineering pragmatism:</strong> chose client-side AI over costly server ML — a financial-engineering decision, not just technical</li>
+        <li><strong>Production discipline:</strong> learned to debug live (auth_check upload error, CSS specificity bug) under user-visible conditions</li>
+        <li><strong>Strategic narrowing:</strong> resisted scope creep — niche &gt; vertical breadth</li>
+        <li><strong>Solo-founder accountability:</strong> every layer (UX, backend, payments, deploy) was mine to own end-to-end</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="reflection">
+    <i class="bi bi-quote quote-icon"></i>
+    <p>
+      The most important lesson wasn't technical. It was learning that <strong>shipping imperfect but real
+      &gt; demoing flawless but fictional</strong> — and that empathy for the user is the cheapest, highest-leverage
+      engineering tool we have.
+    </p>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">09 / 10</div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- SLIDE 10 — CONCLUSION -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="slide slide-closing">
+  <div class="closing-mesh-1"></div>
+  <div class="closing-mesh-2"></div>
+
+  <div class="closing-content">
+    <div class="eyebrow" style="margin-bottom:6px;">Conclusion</div>
+    <h1 class="title-l" style="font-size:34px;line-height:1.15;">
+      From a single heritage store in Palembang<br>
+      to a blueprint for 65 million MSMEs.
+    </h1>
+
+    <!-- Narrative: Problem → Solution → Impact -->
+    <div class="closing-narrative">
+      <div class="cn-block problem">
+        <div class="cn-label">The Problem</div>
+        <h3>42M MSMEs offline</h3>
+        <p>Generic marketplaces extract margins. Online sizing fails. B2B orders drown in WhatsApp chaos.</p>
+      </div>
+      <div class="cn-arrow"><i class="bi bi-arrow-right-circle-fill"></i></div>
+      <div class="cn-block solution">
+        <div class="cn-label">What We Built</div>
+        <h3>3 pillars · 1 platform</h3>
+        <p>Branded e-commerce, AI body scanner per grade tier, structured custom-order studio — live at <strong>tokosakinah.com</strong>.</p>
+      </div>
+      <div class="cn-arrow"><i class="bi bi-arrow-right-circle-fill"></i></div>
+      <div class="cn-block impact">
+        <div class="cn-label">The Impact</div>
+        <h3>Inclusive digital economy</h3>
+        <p>Jobs created per store, MSMEs preserved, families save uniform costs, technology democratized.</p>
+      </div>
+    </div>
+
+    <!-- Stats validating the journey -->
+    <div class="closing-stats-row">
+      <div class="cstat">
+        <div class="cs-num">14 days</div>
+        <div class="cs-label">Idea → live</div>
+      </div>
+      <div class="cstat">
+        <div class="cs-num">&lt; IDR 500K</div>
+        <div class="cs-label">Dev cost</div>
+      </div>
+      <div class="cstat">
+        <div class="cs-num">4.8×</div>
+        <div class="cs-label">LTV / CAC</div>
+      </div>
+      <div class="cstat">
+        <div class="cs-num">10K stores</div>
+        <div class="cs-label">Year 3 SOM</div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <div class="final-cta-logo"><img src="logo_toko.png" alt="Toko Sakinah"></div>
+      <div class="cta-text">
+        <h3>Let's democratize technology for Indonesia's 65 million MSMEs.</h3>
+        <p>From one heritage store in Palembang to a movement reshaping the digital economy — built solo, deployed in 14 days, ready to scale.</p>
+      </div>
+      <div class="cta-meta">
+        <div class="url">tokosakinah.com</div>
+        <div class="author">[Your Full Name]</div>
+        <div class="small">[your.email@gmail.com]</div>
+        <div class="small">[linkedin.com/in/your-handle]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-footer">
+    <img src="logo_toko.png" alt="">
+    <span>tokosakinah.com</span>
+  </div>
+  <div class="slide-num">10 / 10</div>
+</div>
+
+</div>
+
+</body>
+</html>
